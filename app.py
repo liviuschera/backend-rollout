@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 @app.route('/api/hello')
 def hello_world():
-    """Returns Hello, KubeRocketCI from hostname."""
+    """Returns Hello, KubeRocketCI v2 from hostname."""
     hostname = os.getenv('HOSTNAME', 'unknown')
-    return f'Hello, KubeRocketCI from {hostname}'
+    return f'Hello, KubeRocketCI v2 from {hostname}'
 
 
 if __name__ == '__main__':

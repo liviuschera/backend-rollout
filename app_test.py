@@ -9,5 +9,5 @@ def test_hello_endpoint():
     response = client.get('/api/hello')
     assert response.status_code == 200
     hostname = os.getenv('HOSTNAME', 'unknown')
-    expected_message = f'Hello, KubeRocketCI from {hostname}'
+    expected_message = f'Hello, KubeRocketCI v2 from {hostname}'
     assert response.data.decode('utf-8') == expected_message
