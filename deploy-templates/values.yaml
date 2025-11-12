@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount: 3
 
 image:
   repository: backend-rollout
@@ -11,7 +11,7 @@ image:
   tag: ""
 
 imagePullSecrets:
-# Define secret to pull images. Secret can be provisioned by edp-install or manually.
+  # Define secret to pull images. Secret can be provisioned by edp-install or manually.
   - name: regcred
 nameOverride: ""
 fullnameOverride: ""
@@ -29,10 +29,12 @@ serviceAccount:
 podAnnotations: {}
 podLabels: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -45,10 +47,11 @@ service:
   port: 8080
 
 ingress:
-  enabled: false
+  enabled: true
   dnsWildcard: development.krci-dev.cloudmentor.academy
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -62,7 +65,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
